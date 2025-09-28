@@ -48,10 +48,6 @@
 - **AI Integration:** OpenAI API for dynamic quiz questions  
 - **Deployment:** Frontend → Vercel / Netlify, Backend → Render / Heroku  
 
-
-
----
-
 ## 📦 Installation
 
 ### Backend:
