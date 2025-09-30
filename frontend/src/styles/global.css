@@ -1,0 +1,15 @@
+/* frontend/src/styles/global.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  /* Multi-coloured gradient background */
+  background: linear-gradient( #ff6ec4, #42f5d7);
+  background-size: 100% 200%;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
