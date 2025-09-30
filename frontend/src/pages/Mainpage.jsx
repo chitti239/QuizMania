@@ -1,33 +1,48 @@
-// frontend/src/pages/MainPage.jsx
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../styles/mainpage.css";
 
 const categories = [
-  "Tech",
-  "General Knowledge",
-  "Movies",
-  "History",
-  "Sports",
-  "Science",
-  "Music",
-  "Geography"
+  "tech",
+    "gk",
+    "movies",
+    "history",
+    "Sports",
+    "science",
+    "music",
+    "geography",
+    "literature",
+    "art",
+    "politics",
+    "mathematics",
+    "biology",
+    "physics",
+    "chemistry",
+    "technology",
+    "gaming",
+    "movies_bollywood",
+    "celebrities",
+    "mythology",
+    "food",
+    "travel",
+    "animals"
 ];
 
 const MainPage = () => {
+  const navigate = useNavigate();
+
+  const handleCategoryClick = (category) => {
+    navigate(`/quiz/${category.toLowerCase().replace(" ", "")}`);
+  };
+
   return (
     <div className="main-container">
-      <h1>Welcome to QuizMania 🎉</h1>
+      <h2>Welcome to QuizMania 🎉</h2>
       <p>Select a category to start your quiz</p>
-
-      <div className="categories-grid">
-        {categories.map((cat, idx) => (
-          <Link
-            to={`/quiz/${cat.toLowerCase().replace(/\s+/g, "-")}`}
-            key={idx}
-            className="category-card"
-          >
-            <h3>{cat}</h3>
-          </Link>
+      <div className="categories">
+        {categories.map((cat, i) => (
+          <button key={i} onClick={() => handleCategoryClick(cat)} className="category-btn">
+            {cat}
+          </button>
         ))}
       </div>
     </div>

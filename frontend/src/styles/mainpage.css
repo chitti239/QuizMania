@@ -1,46 +1,73 @@
 /* frontend/src/styles/mainpage.css */
 
 .main-container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem 2.5rem;
+  background: linear-gradient(135deg, #82f4e1, #debfe0);
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(130, 244, 225, 0.5);
   text-align: center;
-  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1a1a1a;
+  animation: fadeIn 1s ease-in-out;
+  justify-content: center;
+  flex-direction: column;
+  height: 500px;
 }
 
-.main-container h1 {
-  color: #6200ea;
+.main-container h2 {
+  font-size: 2.5rem;
   margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #4a00e0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
 
 .main-container p {
+  font-size: 1.25rem;
   margin-bottom: 2rem;
-  font-size: 1.1rem;
-  color: #555;
-}
-
-.categories-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.5rem;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.category-card {
-  display: block;
-  text-align: center;
-  background: white;
-  padding: 2rem 1rem;
-  border-radius: 10px;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-weight: 500;
   color: #333;
 }
 
-.category-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
-.category-card h3 {
-  margin: 0;
+.category-btn {
+  background-color: #4a00e0;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.8rem;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(74, 0, 224, 0.5);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-transform: capitalize;
+}
+
+.category-btn:hover {
+  background-color: #7e3ff2;
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .categories {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .category-btn {
+    width: 100%;
+    max-width: 300px;
+    font-size: 1.2rem;
+  }
 }

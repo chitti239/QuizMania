@@ -5,7 +5,10 @@ body {
   /* Multi-coloured gradient background */
   background: linear-gradient( #ff6ec4, #42f5d7);
   background-size: 100% 200%;
+  background-attachment: fixed;
   color: #fff;
+  min-height: 100vh;
+  
 }
 
 a {

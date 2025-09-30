@@ -16,6 +16,8 @@ app.get("/", (req, res) => {
   res.send("QuizMania backend is running 🚀");
 });
 app.use("/api/auth", require("./routes/authRoutes"));
+app.use("/api/quiz", require("./routes/quizRoutes"));
+
 
 // MongoDB connection
 mongoose
