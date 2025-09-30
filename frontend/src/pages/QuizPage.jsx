@@ -16,15 +16,30 @@ const QuizPage = () => {
 
   useEffect(() => {
     const fetchQuestions = async () => {
+      setLoading(true);
       try {
-        const res = await axios.get(`http://localhost:5000/api/quiz/${category}`);
+        // Call your backend AI question generation endpoint
+        const res = await axios.post(
+          `http://localhost:5000/api/ai-quiz`, 
+          { category }
+        );
         setQuestions(res.data);
       } catch (error) {
-        console.error("Error fetching questions", error);
+        console.log("Error fetching AI questions", error);
+        // Optional fallback to static questions API
+        try {
+          const fallbackRes = await axios.get(
+            `http://localhost:5000/api/quiz/${category}`
+          );
+          setQuestions(fallbackRes.data);
+        } catch (fallbackError) {
+          console.log("Fallback error fetching questions", fallbackError);
+        }
       } finally {
         setLoading(false);
       }
     };
+
     fetchQuestions();
   }, [category]);
 
